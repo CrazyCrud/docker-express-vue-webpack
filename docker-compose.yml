@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  srv:
+    build: ./srv
+    expose:
+      - ${APP_SERVER_PORT}
+    environment:
+      API_HOST: ${API_HOST}
+      APP_SERVER_PORT: ${APP_SERVER_PORT}
+    ports:
+      - ${APP_SERVER_PORT}:${APP_SERVER_PORT}
+    volumes:
+      - ./srv/src:/usr/src/srv/src
+    command: "npm run start"
+  web:
+    build:
+      context: ./web
+      target: "develop-stage"
+    environment:
+      - HOST=0.0.0.0
+      - CHOKIDAR_USEPOLLING=true
+    expose:
+      - ${VUE_APP_PORT}
+    ports:
+      - ${HOST_APP_PORT}:${VUE_APP_PORT}
+    volumes:
+      - ./web:/usr/src/web:cached
+    command: "npm run start"

@@ -1,0 +1,13 @@
+{
+  "name": "app_srv",
+  "version": "1.0.0",
+  "description": "Nodejs server",
+  "author": "Constantin Lehenmeier",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}
