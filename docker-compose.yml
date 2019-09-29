@@ -10,7 +10,7 @@ services:
     ports:
       - ${APP_SERVER_PORT}:${APP_SERVER_PORT}
     volumes:
-      - ./srv/src:/usr/src/srv/src
+      - ./srv:/usr/src/srv
     command: "npm run start"
   web:
     build:
