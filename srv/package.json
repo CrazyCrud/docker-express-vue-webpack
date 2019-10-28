@@ -5,9 +5,17 @@
   "author": "Constantin Lehenmeier",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon --watch src server.js"
+    "start": "babel-node server.js",
+    "watch": "nodemon"
   },
   "dependencies": {
-    "express": "^4.16.1"
+    "express": "^4.16.1",
+    "pg": "^7.12.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
+    "@babel/preset-env": "^7.6.2"
   }
 }
