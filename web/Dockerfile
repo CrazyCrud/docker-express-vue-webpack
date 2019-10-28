@@ -9,7 +9,7 @@ RUN npm install
 
 RUN npm install -g @vue/cli
 
-# npm rebuild node-sass
+RUN npm rebuild node-sass
 
 COPY . .
 
